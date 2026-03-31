@@ -47,4 +47,3 @@ while True:
         json.dump(existing_data, f, indent=2)
 
     time.sleep(1)
-
