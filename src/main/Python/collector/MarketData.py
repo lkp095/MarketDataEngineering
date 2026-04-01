@@ -1,26 +1,26 @@
-from fyers_apiv3 import fyersModel
+import sys
 import os
 import time
 import json
 from datetime import datetime
+from fyers_apiv3 import fyersModel
 
-base_dir = os.path.dirname(os.path.abspath(__file__))
-project_root = os.path.abspath(os.path.join(base_dir, "../../../"))
-client_id_path = os.path.join(project_root, "resources/client_id.txt")
-access_token_path = os.path.join(project_root, "resources/access_token.txt")
+# Add parent directory to path for imports
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-client_id = open(client_id_path, "r").read()
-access_token = open(access_token_path, "r").read()
+from utils.path_utils import get_resources_path
+from utils.token_utils import load_tokens
+from config.collector_config import QUOTES_DATA, POLLING_INTERVAL, MARKET_DATA_FILE
 
+# Load tokens from resources
+client_id, access_token = load_tokens()
+resources_path = get_resources_path()
 
 # Initialize the FyersModel instance with your client_id, access_token, and enable async mode
-fyers = fyersModel.FyersModel(client_id=client_id, token=access_token,is_async=False, log_path=(str(project_root) + "/resources/" ))
+fyers = fyersModel.FyersModel(client_id=client_id, token=access_token, is_async=False, log_path=resources_path)
 
-data = {
-    "symbols":"NSE:NIFTY50-INDEX, BSE:SENSEX-INDEX"
-}
 
-market_data_path = os.path.join(project_root, "resources/market_data.json")
+market_data_path = os.path.join(resources_path, MARKET_DATA_FILE)
 
 # Ensure file exists
 if not os.path.exists(market_data_path):
@@ -28,7 +28,7 @@ if not os.path.exists(market_data_path):
         json.dump([], f)
 
 while True:
-    response = fyers.quotes(data=data)
+    response = fyers.quotes(data=QUOTES_DATA)
     print(response)
 
 
@@ -46,5 +46,4 @@ while True:
     with open(market_data_path, "w") as f:
         json.dump(existing_data, f, indent=2)
 
-    time.sleep(1)
-
+    time.sleep(POLLING_INTERVAL)

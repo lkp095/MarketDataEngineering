@@ -1,0 +1,4 @@
+symbol,name,enabled
+NSE:NIFTY50-INDEX,NIFTY 50 Index,true
+BSE:SENSEX-INDEX,Sensex Index,true
+
