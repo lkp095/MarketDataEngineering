@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/src/test/temp" />
+      <excludeFolder url="file://$MODULE_DIR$/temp" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.12 (MarketDataEngineering)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
