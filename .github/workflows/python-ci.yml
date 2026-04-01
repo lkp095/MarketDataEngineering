@@ -31,7 +31,7 @@ jobs:
       - name: Run lint (optional)
         run: |
           pip install flake8
-          flake8 .
+          flake8 --exclude=.venv .
 
       - name: Run tests
         run: |
