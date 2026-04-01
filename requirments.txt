@@ -1,0 +1,16 @@
+pya3
+flask
+xlwings
+pandas
+requests
+ta
+pandas_ta
+pyotp
+websocket-client
+logzero
+fyers_apiv3
+urllib3
+pyyaml
+websockets
+Twisted
+protobuf
