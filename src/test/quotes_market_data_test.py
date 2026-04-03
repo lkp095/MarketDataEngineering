@@ -1,5 +1,5 @@
 """
-Test cases for MarketData.py
+Test cases for quotes_market_data.py
 """
 
 import unittest
@@ -95,7 +95,7 @@ class TestMarketData(unittest.TestCase):
         self.assertEqual(existing_data[1]["data"], response)
     
     def test_file_creation_if_not_exists(self):
-        """Test that market_data.json is created if it doesn't exist"""
+        """Test that quotes_market_data.json is created if it doesn't exist"""
         mock_exists = MagicMock(return_value=False)
         mock_file = MagicMock()
         mock_json_dump = MagicMock()
