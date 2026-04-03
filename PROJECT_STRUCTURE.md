@@ -70,7 +70,7 @@ Run the authentication script to generate access tokens:
 
 ```bash
 cd src/main/Python
-python authenticator/Auth.py
+python authenticator/auth.py
 ```
 
 This will:
@@ -85,7 +85,7 @@ Run the market data collector:
 
 ```bash
 cd src/main/Python
-python collector/MarketData.py
+python collector/quotes_market_data.py
 ```
 
 This will:
@@ -117,7 +117,7 @@ MARKET_DATA_SYMBOLS = "NSE:NIFTY50-INDEX, BSE:SENSEX-INDEX"
 POLLING_INTERVAL = 1
 
 # Change output file name
-MARKET_DATA_FILE = "market_data.json"
+MARKET_DATA_FILE = "quotes_market_data.json"
 ```
 
 ## Benefits

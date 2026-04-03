@@ -1,4 +1,7 @@
 symbol,name,enabled
 NSE:NIFTY50-INDEX,NIFTY 50 Index,true
-BSE:SENSEX-INDEX,Sensex Index,true
-
+BSE:SENSEX-INDEX,Sensex Index,false
+NSE:NIFTYBANK-INDEX,Nifty Bank Index,true
+NSE:MIDCPNIFTY-INDEX,Nifty Midcap Index,true
+NSE:SMALLCPNIFTY-INDEX,Nifty Smallcap Index,false
+NSE:NIFTYIT-INDEX,Nifty IT Index,false
